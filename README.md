@@ -8,4 +8,4 @@ share some apex cheat code
 
 ### player
 |:-|:-:|-:|
-|get_sid|获取SID|[cde](get_sid.cpp)https://github.com/Andtun02/fxxk_apex/blob/main/get_sid.cpp|
+|get_sid|获取SID|https://github.com/Andtun02/fxxk_apex/blob/main/get_sid.cpp|
