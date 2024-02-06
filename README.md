@@ -12,3 +12,4 @@ I am an individual who engages in the art of copy-pasting, merely a jester of ac
 |en|zh|link|
 |:-|:-:|-:|
 |get_sid|获取SID|https://github.com/Andtun02/fxxk_apex/blob/main/get_sid.cpp|
+|get_rank_leaderboards_list|获取猎杀排行名单|https://github.com/Andtun02/fxxk_apex/blob/main/get_rank_leaderboards_list.py|
