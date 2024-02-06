@@ -1,5 +1,7 @@
 # fxxk_apex
 share some apex cheat code
+I am an individual who engages in the art of copy-pasting, merely a jester of academic imitations dwelling at the lowest echelons of society.
+我是个粘贴小子，活在社会最底层的抄作业小丑罢了
 
 ### aimbot
 |en|zh|link|
