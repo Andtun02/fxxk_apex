@@ -1,8 +1,11 @@
 # fxxk_apex
 share some apex cheat code
 
-- aim / 瞄准
-   1. skynode / 空爆雷
-   2. 
-- player / 玩家
-   1. get_sid / 获取SID
+### aimbot
+|en|zh|link|
+|:-|:-:|-:|
+|skynode|空爆雷|[cde](sky_node.cpp)https://github.com/Andtun02/fxxk_apex/blob/main/sky_node.cpp|
+
+### player
+|:-|:-:|-:|
+|get_sid|获取SID|[cde](get_sid.cpp)https://github.com/Andtun02/fxxk_apex/blob/main/get_sid.cpp|
