@@ -1,3 +1,5 @@
+// GO https://github.com/CasualX/apexdream/blob/232736e1036212684534ab2a0665f3af70f7f507/src/cheats/esp.rs#L417
+
 // 定义投掷角度和视角的结构体
 typedef struct
 {
