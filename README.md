@@ -20,9 +20,9 @@ I am an individual who engages in the art of copy-pasting, merely a jester of ac
 how to use ? inject arbitrary program or no overlay => ./server
 
 <img src="Pictures/image.png" alt="Main View" width="960" height="540">
-<img src="Pictures/image1.png" alt="Main View" width="960" height="540">
-<img src="Pictures/image2.png" alt="Main View" width="960" height="540">
-<img src="Pictures/image3.png" alt="Main View" width="960" height="540">
+<img src="Pictures/image1.png" alt="Main View" width="960" height="1080">
+<img src="Pictures/image2.png" alt="Main View" width="960" height="1080">
+<img src="Pictures/image3.png" alt="Main View" width="960" height="1080">
 
 ## Acknowledgments
 * [memflow](https://github.com/memflow/memflow)
