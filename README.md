@@ -15,3 +15,17 @@ I am an individual who engages in the art of copy-pasting, merely a jester of ac
 |get_rank_leaderboards_list|获取猎杀排行名单|[🤡](https://github.com/Andtun02/fxxk_apex/blob/main/get_rank_leaderboards_list.py)|
 
 # now： kvm apex cheat
+
+## Acknowledgments
+* [memflow](https://github.com/memflow/memflow)
+* [ratatui](https://ratatui.rs)
+* [tracel-ai/burn](https://github.com/tracel-ai/burn)
+* [TheCruz's Apex Aimbot+ESP](https://www.unknowncheats.me/forum/apex-legends/369786-apex-directx-wallhack-smooth-aimbot-source.html)
+* [h33p/vmread](https://github.com/h33p/vmread)
+* [Y33Tcoder/EzApexDMAAimbot](https://github.com/Y33Tcoder/EzApexDMAAimbot)
+* [MisterY52/apex_dma_kvm_pub](https://github.com/MisterY52/apex_dma_kvm_pub)
+* [KrackerCo/apex_dma_kvm_pub](https://github.com/KrackerCo/apex_dma_kvm_pub)
+* [CasualX/apexdream](https://github.com/CasualX/apexdream)
+* [Nexilist/xap-client](https://github.com/Nexilist/xap-client)
+* [Xnieno/ApexDreamForYou](https://github.com/Xnieno/ApexDreamForYou)
+* [chettoy/apexsky](https://github.com/chettoy/apexsky)
