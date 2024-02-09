@@ -17,7 +17,7 @@ I am an individual who engages in the art of copy-pasting, merely a jester of ac
 # now： kvm apex cheat
 ## [DOWNLOAD](https://github.com/Andtun02/fxxk_apex/releases)
 
-how to use ? inject arbitrary program or ./server [no overlay]
+how to use ? inject arbitrary program or no overlay => ./server
 
 <img src="Pictures/image.png" alt="Main View" width="960" height="540">
 <img src="Pictures/image1.png" alt="Main View" width="960" height="540">
