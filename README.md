@@ -16,10 +16,10 @@ I am an individual who engages in the art of copy-pasting, merely a jester of ac
 
 # now： kvm apex cheat
 [DOWNLOAD](https://github.com/Andtun02/fxxk_apex/releases)
-<img src="Pictures/image.jpg" alt="Main View" width="960" height="540">
-<img src="Pictures/image1.jpg" alt="Main View" width="960" height="540">
-<img src="Pictures/image2.jpg" alt="Main View" width="960" height="540">
-<img src="Pictures/image3.jpg" alt="Main View" width="960" height="540">
+<img src="Pictures/image.png" alt="Main View" width="960" height="540">
+<img src="Pictures/image1.png" alt="Main View" width="960" height="540">
+<img src="Pictures/image2.png" alt="Main View" width="960" height="540">
+<img src="Pictures/image3.png" alt="Main View" width="960" height="540">
 
 ## Acknowledgments
 * [memflow](https://github.com/memflow/memflow)
