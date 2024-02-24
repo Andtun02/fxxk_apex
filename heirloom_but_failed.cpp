@@ -148,3 +148,64 @@ The garbage code generated during the process, if it is helpful to you
         }
 
 **/
+
+
+
+/*
+It is indeed difficult to implement sequences externally, especially since I am still a beginner. You must go to IDA to implement the key code externally. 
+I gave up and don't ask me any more related questions. I hope the following information is helpful to you
+*/
+
+// [new] https://www.unknowncheats.me/forum/3727019-post12155.html
+// [old] https://www.unknowncheats.me/forum/apex-legends/488411-heirloom-animation-fix.html
+// ===============
+// [IDA Decompilation]
+// => [pSeqdesc] pSeqdesc 48 8B 41 ? 48 85 C0 75 ? 4C 8B 49 ? 45 0F B7 41 ?
+__int64 __fastcall sub_7FF65B543BF0(__int64 model, unsigned __int16 sequence)
+{
+  __int64 v2; // rax
+  __int64 v3; // r9
+
+  v2 = *(_QWORD *)(model + 16);
+  if ( v2 )
+    return *(_QWORD *)(*(_QWORD *)(v2 + 16) + 16i64 * (__int16)sequence + 8);
+  v3 = *(_QWORD *)(model + 8);
+  if ( sequence < *(_WORD *)(v3 + 122) )
+    LOWORD(v2) = sequence;
+  return v3
+       + ((unsigned __int16)(*(_WORD *)(v3 + 124) & 0xFFFE) << (4 * (*(_WORD *)(v3 + 124) & 1)))
+       + 112i64 * (__int16)v2;
+}
+// => [get_model] 40 53 48 83 EC ? 48 83 B9 ? ? ? ? ? 48 8B D9 75 ? 48 8B 41 ?
+__int64 __fastcall sub_7FF65B873C40(__int64 view_model_ptr)
+{
+  if ( *(_QWORD *)(view_model_ptr + 0xFD0) )
+    return *(_QWORD *)(view_model_ptr + 0xFD0);
+  if ( (*(__int64 (__fastcall **)(__int64))(*(_QWORD *)(view_model_ptr + 16) + 96i64))(view_model_ptr + 16) )
+    sub_7FF65BA9CB30(view_model_ptr);
+  return *(_QWORD *)(view_model_ptr + 0xFD0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
