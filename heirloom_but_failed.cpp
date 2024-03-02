@@ -1,3 +1,58 @@
+//2024-3-3
+//At least it won't collapse There are still issues with animation sequences
+int m_fFlags,in_forward,in_attack,in_speed,seq;
+void  heirloom(uint64_t &LocalPlayer){
+//    if(vars->misc.heirloom) {
+    if(true) {
+        // 获得手持模型实体
+        auto view_model_handle = apex_mem.Read<uint64_t>(LocalPlayer + offsets.cplayer_viewmodels); //m_hViewModels
+        view_model_handle &= 0xFFFF;
+        auto view_model_ptr = apex_mem.Read<uint64_t>(g_Base + offsets.entitylist + (view_model_handle << 5));
+        if (!view_model_ptr) return;
+        // 获得模型名称
+        char modelName[200] = {0};
+        auto name_ptr = apex_mem.Read<uint64_t>(view_model_ptr + offsets.centity_modelname);
+        apex_mem.ReadArray<char>(name_ptr, modelName, 200);
+        std::string model_name_str = std::string(modelName);
+        // 获得动画序列、模型下标
+        int cur_sequence = apex_mem.Read<int>(view_model_ptr + m_currentFrameBaseAnimating_animSequence);
+        int model_index  = apex_mem.Read<int>(view_model_ptr + m_currentFrame_modelIndex);
+        // 写入模型参数
+        if (model_name_str.find("empty") != std::string::npos || model_index==185) {
+            apex_mem.Write<const char *>(name_ptr, "mdl/weapons/kunai/wraith_kunai_rt01_v.rmdl");
+            apex_mem.Write(view_model_ptr + m_currentFrame_modelIndex, 3656);
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        }
+        // 写入动画参数
+        if (model_name_str.find("wraith_kunai") != std::string::npos && model_index == 3656) {
+            m_fFlags    = apex_mem.Read<int>(LocalPlayer + 0x00c8);
+            in_forward  = apex_mem.Read<int>(g_Base + offsets.in_forward + 0x8);
+            in_attack   = apex_mem.Read<int>(g_Base + offsets.in_attack + 0x8);
+            in_speed    = apex_mem.Read<int>(g_Base + 0x073e0b60 + 0x8);
+            seq = 60;
+
+            if(m_fFlags     == 65)      seq = 60; //站立
+            if(m_fFlags     == 64)      seq = 61; //跳跃
+            if(in_forward)              seq = 13; //前进
+            if(m_fFlags     == 67)      seq = 74; //蹲下
+            if(in_attack    == 5)       seq = 55; //攻击
+            if(in_speed     == 5)       seq = 73; //疾跑
+
+            apex_mem.Write(view_model_ptr + m_currentFrameBaseAnimating_animSequence,seq);
+        }
+//        melog(debug,"%d",apex_mem.Read<int>(view_model_ptr + 0x0d44));
+        melog(debug,"[下标:%d][序列:%d][模型:%s][Flags:%d][前进:%d][攻击:%d]",model_index,cur_sequence,modelName,m_fFlags,in_forward,in_attack);
+    }
+}
+
+
+
+
+
+
+
+
+
 if(vars->misc.heirloom){ /* 传家宝 */
             // 获得手持模型实体
             auto view_model_handle = apex_mem.Read<uint64_t>(LocalPlayer + offsets.cplayer_viewmodels); //m_hViewModels
