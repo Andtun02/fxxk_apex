@@ -241,6 +241,85 @@ __int64 __fastcall sub_7FF65B873C40(__int64 view_model_ptr)
   return *(_QWORD *)(view_model_ptr + 0xFD0);
 }
 
+void *__fastcall sub_7FF65BA9CB30(__int64 *a1)
+{
+  __int64 *ThreadLocalStoragePointer; // rax
+  __int64 v3; // r8
+  __int64 v4; // rdx
+  char *v5; // rbx
+  __int64 v6; // rax
+  unsigned __int16 v7; // bp
+  void *v8; // rax
+  __int64 v9; // rsi
+  __int64 v10; // rdi
+  __int64 v11; // rax
+  void *result; // rax
+
+  if ( !byte_7FF66272D160 )
+  {
+    sub_7FF65B83BF70();
+    ThreadLocalStoragePointer = (__int64 *)NtCurrentTeb()->ThreadLocalStoragePointer;
+    v3 = *ThreadLocalStoragePointer;
+    v4 = *(int *)(*ThreadLocalStoragePointer + 84);
+    *(_BYTE *)(*ThreadLocalStoragePointer + v4 + 4240) = 9;
+    *(_DWORD *)(v3 + 84) = v4 + 1;
+  }
+  v5 = (char *)&unk_7FF666C93D70 + 48 * *((_DWORD *)a1 + 14) + 393312;
+  MEMORY[0x7FFFBD49FAA0](v5);
+  v6 = (*(__int64 (__fastcall **)(__int64 *))(a1[2] + 96))(a1 + 2);
+  if ( !a1[506] )
+  {
+    v7 = (*((__int64 (__fastcall **)(void **, __int64))*off_7FF662730210 + 32))(off_7FF662730210, v6);
+    if ( v7 != 0xFFFF )
+    {
+      v8 = off_7FF66272CF08;
+      if ( !off_7FF66272CF08 )
+      {
+        v8 = (void *)sub_7FF65B832600();
+        off_7FF66272CF08 = v8;
+      }
+      v9 = (*(__int64 (__fastcall **)(void *, __int64))(*(_QWORD *)v8 + 8i64))(v8, 1688i64);
+      if ( v9 )
+      {
+        *(_QWORD *)(v9 + 24) = 0i64;
+        *(_QWORD *)(v9 + 32) = 0i64;
+        *(_QWORD *)(v9 + 40) = 0i64;
+        *(_DWORD *)(v9 + 56) = 0;
+        *(_QWORD *)(v9 + 64) = v9 + 56;
+        *(_QWORD *)(v9 + 1656) = 0i64;
+        *(_QWORD *)(v9 + 1664) = 0i64;
+        *(_QWORD *)(v9 + 1672) = 0i64;
+        *(_WORD *)(v9 + 1680) = -1;
+        *(_QWORD *)(v9 + 1608) = 0i64;
+        *(_QWORD *)(v9 + 8) = 0i64;
+        *(_QWORD *)(v9 + 16) = 0i64;
+        *(_DWORD *)(v9 + 48) = 0;
+        *(_QWORD *)(v9 + 1632) = 0i64;
+      }
+      else
+      {
+        v9 = 0i64;
+      }
+      v10 = (*((__int64 (__fastcall **)(void **, _QWORD))*off_7FF66272CE70 + 11))(off_7FF66272CE70, v7);
+      (*((void (__fastcall **)(void **, _QWORD, __int64))*off_7FF66272CE70 + 40))(off_7FF66272CE70, v7, v9);
+      sub_7FF65B7054D0(v9, 0i64, v10, off_7FF66272CE70);
+      *(_QWORD *)(v9 + 1624) = a1;
+      *(_QWORD *)(v9 + 1608) = sub_7FF65BA9CA60;
+      *(_QWORD *)(v9 + 1616) = sub_7FF65BA9CB20;
+      v11 = *a1;
+      *((_WORD *)a1 + 2028) = v7;
+      a1[506] = v9;
+      (*(void (__fastcall **)(__int64 *))(v11 + 632))(a1);
+    }
+  }
+  result = (void *)MEMORY[0x7FFFBD49F230](v5);
+  if ( !byte_7FF66272D160 )
+  {
+    result = NtCurrentTeb()->ThreadLocalStoragePointer;
+    --*(_DWORD *)(*(_QWORD *)result + 84i64);
+  }
+  return result;
+}
 
 
 
