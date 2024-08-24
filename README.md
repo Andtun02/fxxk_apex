@@ -3,6 +3,8 @@
 I am an individual who engages in the art of copy-pasting, merely a jester of academic imitations dwelling at the lowest echelons of society.
 我是个粘贴小子，活在社会最底层的抄作业小丑罢了
 
+### offsets
+#define GLOW_DISTANCE 0x294 // Highlight_SetFarFadeDist [ 8B 81 ? ? ? ? 85 C0 75 ? 48 8D 0D ? ? ? ? E9 ]
 ### aimbot
 |en|zh|link|
 |:-|:-:|-:|
@@ -18,16 +20,6 @@ I am an individual who engages in the art of copy-pasting, merely a jester of ac
 |en|zh|link|
 |:-|:-:|-:|
 |discord_overlay_external|Discord覆盖|[🤡](https://github.com/Andtun02/fxxk_apex/blob/main/discord_overlay_external.h)|
-
-# now： kvm apex cheat
-## [DOWNLOAD](https://github.com/Andtun02/fxxk_apex/releases)
-
-how to use ? inject arbitrary program or no overlay => ./server
-
-<img src="Pictures/image.png" alt="Main View" width="960" height="540">
-<img src="Pictures/image1.png" alt="Main View" width="960" height="1080">
-<img src="Pictures/image2.png" alt="Main View" width="960" height="1080">
-<img src="Pictures/image3.png" alt="Main View" width="960" height="1080">
 
 ## Acknowledgments
 * [memflow](https://github.com/memflow/memflow)
