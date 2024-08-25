@@ -1,10 +1,11 @@
 #define OFF_GLOW_HIGHLIGHTS 0xb13c6a0
-#define OFF_GLOW_ENABLE 0x27c
-#define OFF_GLOW_THROUGH_WALL 0x26C
+#define OFF_GLOW_ENABLE 0x28c
+#define OFF_GLOW_THROUGH_WALL 0x26c
 #define OFF_GLOW_HIGHLIGHT_ID 0x29C
 #define OFF_HIGHLIGHT_TYPE_SIZE 0x34
 #define OFF_GLOW_FIX 0x268
 #define OFF_GLOW_DISTANCE 0x294 // Highlight_SetFarFadeDist [ 8B 81 ? ? ? ? 85 C0 75 ? 48 8D 0D ? ? ? ? E9 ]
+
 
 if (conf->glow_player)
         {
@@ -42,17 +43,15 @@ if (conf->glow_player)
                 if (mem.Read<int>(p->base + OFF_GLOW_HIGHLIGHT_ID, true) != settingIndex) {
                     mem.Write<int>(p->base + OFF_GLOW_HIGHLIGHT_ID, 1);
                     //wall
-                    mem.Write<int>(p->base + OFF_GLOW_THROUGH_WALL, 2);
+                    mem.Write<int>(p->base + OFF_GLOW_THROUGH_WALL, 1);
                     //fix
-                    mem.Write<int>(p->base + OFF_GLOW_FIX, 0);
+                    mem.Write<int>(p->base + OFF_GLOW_FIX, 2);
                 }
                 mem.AddScatterWriteRequest(handle, p->base + OFF_GLOW_DISTANCE, &MAX_DIST, sizeof(int));
-                mem.AddScatterWriteRequest(handle, p->base + OFF_GLOW_HIGHLIGHT_ID + contextId,&settingIndex,sizeof(unsigned char));
+                mem.AddScatterWriteRequest(handle, p->base + OFF_GLOW_HIGHLIGHT_ID + contextId,&settingIndex,sizeof(settingIndex));
                 mem.AddScatterWriteRequest(handle, highlightSettingsPtr + OFF_HIGHLIGHT_TYPE_SIZE * settingIndex + 0, &highlightFunctionBits, sizeof(highlightFunctionBits));
                 mem.AddScatterWriteRequest(handle, highlightSettingsPtr + OFF_HIGHLIGHT_TYPE_SIZE * settingIndex + 4, &glowColorRGB, sizeof(glowColorRGB));
             }
             if(ready) mem.ExecuteWriteScatter(handle);
             mem.CloseScatterHandle(handle);
         }
-
-
