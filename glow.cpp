@@ -6,6 +6,27 @@
 #define OFF_GLOW_FIX 0x268
 #define OFF_GLOW_DISTANCE 0x294 // Highlight_SetFarFadeDist [ 8B 81 ? ? ? ? 85 C0 75 ? 48 8D 0D ? ? ? ? E9 ]
 
+// ITEM GLOW
+if (conf->glow_items) {
+        auto handle = mem.CreateScatterHandle(); bool ready = false;
+        for (int highlightId = 15; highlightId < 66; highlightId++) {
+                const GlowMode oldGlowMode = mem.Read<GlowMode>(highlightSettingsPtr + (OFF_HIGHLIGHT_TYPE_SIZE * highlightId) + 0);
+                if (newGlowMode1 != oldGlowMode) {
+                        ready = true;
+                        mem.AddScatterWriteRequest(handle, highlightSettingsPtr + (OFF_HIGHLIGHT_TYPE_SIZE * highlightId) + 0, &newGlowMode1, sizeof(newGlowMode1));
+                }
+        }
+        if (ready) mem.ExecuteWriteScatter(handle);
+        mem.CloseScatterHandle(handle);
+}
+else {
+        auto handle = mem.CreateScatterHandle();
+        for (int highlightId = 15; highlightId < 66; highlightId++) {
+                mem.AddScatterWriteRequest(handle, highlightSettingsPtr + (OFF_HIGHLIGHT_TYPE_SIZE * highlightId) + 0, &newGlowMode2, sizeof(newGlowMode2));
+        }
+        mem.ExecuteWriteScatter(handle);
+        mem.CloseScatterHandle(handle);
+}
 
 if (conf->glow_player)
         {
