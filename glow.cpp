@@ -40,7 +40,7 @@ if (conf->glow_player)
             };
             std::array<float, 3> glowColorRGB = { 0, 0, 0 };
 
-            auto handle = mem.CreateScatterHandle(); bool ready = false;
+            auto handle = mem.CreateScatterHandle();
             for (const auto p:*Players) {
                 if (!p->IsValid() || !p->isHostile || !p->sure) continue;
                 ready = true;
@@ -67,12 +67,12 @@ if (conf->glow_player)
                     mem.Write<int>(p->base + OFF_GLOW_THROUGH_WALL, 1);
                     //fix
                     mem.Write<int>(p->base + OFF_GLOW_FIX, 2);
+                    mem.Write<int>(p->base + OFF_GLOW_DISTANCE, MAX_DIST);
                 }
-                mem.AddScatterWriteRequest(handle, p->base + OFF_GLOW_DISTANCE, &MAX_DIST, sizeof(int));
                 mem.AddScatterWriteRequest(handle, p->base + OFF_GLOW_HIGHLIGHT_ID + contextId,&settingIndex,sizeof(settingIndex));
-                mem.AddScatterWriteRequest(handle, highlightSettingsPtr + OFF_HIGHLIGHT_TYPE_SIZE * settingIndex + 0, &highlightFunctionBits, sizeof(highlightFunctionBits));
-                mem.AddScatterWriteRequest(handle, highlightSettingsPtr + OFF_HIGHLIGHT_TYPE_SIZE * settingIndex + 4, &glowColorRGB, sizeof(glowColorRGB));
             }
-            if(ready) mem.ExecuteWriteScatter(handle);
+            mem.AddScatterWriteRequest(handle, highlightSettingsPtr + OFF_HIGHLIGHT_TYPE_SIZE * settingIndex + 0, &highlightFunctionBits, sizeof(highlightFunctionBits));
+            mem.AddScatterWriteRequest(handle, highlightSettingsPtr + OFF_HIGHLIGHT_TYPE_SIZE * settingIndex + 4, &glowColorRGB, sizeof(glowColorRGB));
+            mem.ExecuteWriteScatter(handle);
             mem.CloseScatterHandle(handle);
         }
