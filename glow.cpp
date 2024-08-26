@@ -25,7 +25,7 @@ if (conf->glow_player)
                 ready = true;
 
                 if (p->isDown && conf->glow_player_down) {
-                    settingIndex = 75;
+                    settingIndex = 80;
                     glowColorRGB = { conf->glow_player_down_color[0], conf->glow_player_down_color[1],conf->glow_player_down_color[2] };
                 }
                 else {
