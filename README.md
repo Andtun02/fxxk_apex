@@ -4,7 +4,7 @@ I am an individual who engages in the art of copy-pasting, merely a jester of ac
 我是个粘贴小子，活在社会最底层的抄作业小丑罢了
 
 ### offsets
-#define GLOW_DISTANCE 0x294 // Highlight_SetFarFadeDist [ 8B 81 ? ? ? ? 85 C0 75 ? 48 8D 0D ? ? ? ? E9 ]
+#define GLOW_DISTANCE 0x264 // Highlight_SetFarFadeDist [ 0F 57 C0 0F 2F C1 76 ? F3 0F 10 05 ? ? ? ? F3 0F 11 81 ]
 ### aimbot
 |en|zh|link|
 |:-|:-:|-:|
